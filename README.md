@@ -46,3 +46,20 @@ With this JSON body:
     "message": "I want 2 coffees"
 }
 ```
+
+## Example
+
+**Request:**
+```json
+{
+    "message": "Can I get a dozen donuts?"
+}
+```
+
+**Response:**
+```json
+{
+    "extracted": {"item": "donuts", "quantity": 12},
+    "confirmation": "12x donuts have been added to your order!"
+}
+```

@@ -84,7 +84,10 @@ def process_order(data: CustomerMessage):
             return {"confirmation": "Sorry, we can't process orders that large. Please order less than 100 items."}
 
         # Generates the confirmation message using the extracted item and quantity
-        confirmation = f"{quantity}x {item} has been added to your order!"
+        if quantity == 1:
+            confirmation = f"{quantity}x {item} has been added to your order!"
+        else:
+            confirmation = f"{quantity}x {item} have been added to your order!"
 
     # If anything goes wrong parsing the LLM response, return an error message
     except:
